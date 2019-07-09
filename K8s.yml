@@ -1,0 +1,74 @@
+--- 
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata: 
+  name: edgeservice-deployment
+spec: 
+  replicas: 1
+  template: 
+    metadata: 
+      labels: 
+        app: edgeservice
+    spec: 
+      containers: 
+        - 
+          image: docker.io/mctocci/edgeservice:latest
+          name: edgeservicecontainer
+          ports: 
+            - 
+              containerPort: 80
+      imagePullSecrets: 
+        - 
+          name: mubbles              
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edgeservice-service
+spec:
+  type: NodePort
+
+  ports:
+  -
+    port: 8765
+    targetPort: 80
+  selector:
+    app: edgeservice
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: internalservice-service
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8765
+    targetPort: 80
+    name: http     
+    protocol: TCP
+  selector:
+    app: internalservice
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: internalservice-deployment
+spec:
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: internalservice
+    spec:
+      containers:
+      - name: internalservicecontainer
+        image: docker.io/mctocci/internalservice:latest
+        ports:
+        - containerPort: 8080
+      imagePullSecrets: 
+        - 
+          name: mubbles    

@@ -1,0 +1,14 @@
+/home/mctocci/dev/vscode/projects/EdgeService/obj/Debug/netcoreapp2.2/EdgeService.csprojAssemblyReference.cache
+/home/mctocci/dev/vscode/projects/EdgeService/obj/Debug/netcoreapp2.2/EdgeService.csproj.CoreCompileInputs.cache
+/home/mctocci/dev/vscode/projects/EdgeService/obj/Debug/netcoreapp2.2/EdgeService.RazorAssemblyInfo.cache
+/home/mctocci/dev/vscode/projects/EdgeService/obj/Debug/netcoreapp2.2/EdgeService.RazorAssemblyInfo.cs
+/home/mctocci/dev/vscode/projects/EdgeService/obj/Debug/netcoreapp2.2/EdgeService.AssemblyInfoInputs.cache
+/home/mctocci/dev/vscode/projects/EdgeService/obj/Debug/netcoreapp2.2/EdgeService.AssemblyInfo.cs
+/home/mctocci/dev/vscode/projects/EdgeService/bin/Debug/netcoreapp2.2/EdgeService.deps.json
+/home/mctocci/dev/vscode/projects/EdgeService/bin/Debug/netcoreapp2.2/EdgeService.runtimeconfig.json
+/home/mctocci/dev/vscode/projects/EdgeService/bin/Debug/netcoreapp2.2/EdgeService.runtimeconfig.dev.json
+/home/mctocci/dev/vscode/projects/EdgeService/bin/Debug/netcoreapp2.2/EdgeService.dll
+/home/mctocci/dev/vscode/projects/EdgeService/bin/Debug/netcoreapp2.2/EdgeService.pdb
+/home/mctocci/dev/vscode/projects/EdgeService/obj/Debug/netcoreapp2.2/EdgeService.RazorTargetAssemblyInfo.cache
+/home/mctocci/dev/vscode/projects/EdgeService/obj/Debug/netcoreapp2.2/EdgeService.dll
+/home/mctocci/dev/vscode/projects/EdgeService/obj/Debug/netcoreapp2.2/EdgeService.pdb

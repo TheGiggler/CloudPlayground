@@ -4,9 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using k8s;
-using k8s.Models;
-using k8s.KubeConfigModels;
+using Newtonsoft.Json;
 
 namespace EdgeService.Controllers
 {
@@ -21,6 +19,8 @@ namespace EdgeService.Controllers
             var hostnameMachine = Environment.GetEnvironmentVariable("HOSTNAME", EnvironmentVariableTarget.Machine);
             var hostnameProcess = Environment.GetEnvironmentVariable("HOSTNAME", EnvironmentVariableTarget.Process);
             var hostnameUser = Environment.GetEnvironmentVariable("HOSTNAME", EnvironmentVariableTarget.User);
+
+            
 
             //get Service1 uri and port
             //Ex: 
@@ -41,10 +41,10 @@ namespace EdgeService.Controllers
             //Ex: SERVICE1_SERVICE_SERVICE_HOST=10.0.61.236
             //SERVICE1_SERVICE_PORT = SERVICE1_SERVICE_SERVICE_PORT=8765
             //SERVICE1_SERVICE_SERVICE_HOST=10.0.113.246
-            var service1Port = Environment.GetEnvironmentVariable("SERVICE1_SERVICE_SERVICE_PORT", EnvironmentVariableTarget.Process);
-            var service1ServiceHost= Environment.GetEnvironmentVariable("SERVICE1_SERVICE_SERVICE_HOST", EnvironmentVariableTarget.Process);
-
-            var uri = $"http://{service1ServiceHost}:{service1Port}/api/time";
+            var internalServicePort = Environment.GetEnvironmentVariable("INTERNALSERVICE_SERVICE_SERVICE_PORT", EnvironmentVariableTarget.Process);
+            var service1ServiceHost= Environment.GetEnvironmentVariable("INTERNALSERVICE_SERVICE_SERVICE_HOST", EnvironmentVariableTarget.Process);
+                                                                         
+            var uri = $"http://{service1ServiceHost}:{internalServicePort}/api/time";
             var time = client.DownloadString(uri);
             //or use service name and DNS
             //var time = client.DownloadString("http://service1-service:8765/api/time");
